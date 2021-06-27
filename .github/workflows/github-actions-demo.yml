@@ -17,6 +17,7 @@ jobs:
       - name: Install Jenkins Job Builder
         run: |
           pip install --user jenkins-job-builder
+          cat ~/.config/jenkins_jobs/jenkins_jobs.ini
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
