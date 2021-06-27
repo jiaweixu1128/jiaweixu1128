@@ -18,6 +18,7 @@ jobs:
         run: |
           pip install --user jenkins-job-builder
           cat ${{ github.workspace }}/jenkins_jobs.ini
+          jenkins-jobs -h
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
