@@ -19,8 +19,9 @@ jobs:
           pip install --user jenkins-job-builder
           cat ${{ github.workspace }}/jenkins_jobs.ini
           jenkins-jobs -h
-          sed -i  's/password=/&cdpQa12*3*/' ${{ github.workspace }}/jenkins_jobs.ini
+          sed -i  's/password=/&${{ secrets.joy_password }}/' ${{ github.workspace }}/jenkins_jobs.ini
           cat ${{ github.workspace }}/jenkins_jobs.ini
+          jenkins-jobs --conf ${{ github.workspace }}/jenkins_jobs.ini --server dev update ${{ github.workspace }}/templates002.yaml
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
