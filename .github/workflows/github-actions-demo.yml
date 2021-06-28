@@ -18,7 +18,7 @@ jobs:
         run: |
           pip install --user jenkins-job-builder
           jenkins-jobs -h
-          sed -i  's/password=/&${{ secrets.joy_password }}/' ${{ github.workspace }}/jenkins_jobs.ini
+          sed -i  's/password=/&cdpQa123*/' ${{ github.workspace }}/jenkins_jobs.ini
           cat ${{ github.workspace }}/jenkins_jobs.ini
       - name: List files in the repository
         run: |
