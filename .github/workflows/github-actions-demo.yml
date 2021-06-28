@@ -17,6 +17,7 @@ jobs:
       - name: Install Jenkins Job Builder
         run: |
           pip install --user jenkins-job-builder
+          cat ${{ github.workspace }}/jenkins_jobs.ini
           jenkins-jobs -h
           sed -i  's/password=/&cdpQa12*3*/' ${{ github.workspace }}/jenkins_jobs.ini
           cat ${{ github.workspace }}/jenkins_jobs.ini
