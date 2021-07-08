@@ -4,7 +4,7 @@
       - shell: 'git co {branch_name}'
 
 - project:
-   name: project-name
+   name: joy-project-name
    pyver:
     - 27:
        branch_name: new_branch
