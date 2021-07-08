@@ -9,8 +9,13 @@ jobs:
   Explore-GitHub-Actions:
     if: github.event.pull_request.merged == true
     runs-on: self-hosted
-    steps:     
-      - name: Install Jenkins Job Builder
+    steps: 
+      - name: Check out repository code
+        use: actions/checkout@v2
+      - run: echo "The ${{ github.repositroy}} repository has been cloned to the runner."
+      - run: echo "The workflow is now ready to test on the runner"    
+      - name: update jjb to dev server
         run: |
-         jenkins-jobs --conf ~/Documents/jenkins_jobs.ini --server dev update ~/Documents/test.yaml
+         ls ${{ github.workspace }}
+         #jenkins-jobs --conf ~/Documents/jenkins_jobs.ini --server dev update ~/Documents/test.yaml
 
