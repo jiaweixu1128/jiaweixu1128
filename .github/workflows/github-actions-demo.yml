@@ -13,9 +13,10 @@ jobs:
       - name: Check out repository code
         use: actions/checkout@v2
       - run: echo "The ${{ github.repositroy}} repository has been cloned to the runner."
-      - run: echo "The workflow is now ready to test on the runner"    
+      - run: echo "The workflow is now ready to test on the runner."    
       - name: update jjb to dev server
         run: |
          ls ${{ github.workspace }}
-         #jenkins-jobs --conf ~/Documents/jenkins_jobs.ini --server dev update ~/Documents/test.yaml
+         jenkins-jobs --conf ~/Documents/jenkins_jobs.ini --server dev update ${{ github.workspace }}/templates002.yaml
+      - run: echo "This job's status is ${{ job.status}}."
 
