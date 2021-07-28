@@ -17,6 +17,6 @@ jobs:
       - name: update jjb to dev server
         run: |
          ls ${{ github.workspace }}
-         jenkins-jobs --conf ./jenkins_jobs.ini --server dev update ${{ github.workspace }}/templates002.yaml
+         jenkins-jobs --conf /jenkins_jobs.ini --server dev update ${{ github.workspace }}/templates002.yaml
       - run: echo "This job's status is ${{ job.status}}."
 
