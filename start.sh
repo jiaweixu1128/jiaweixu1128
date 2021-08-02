@@ -12,4 +12,4 @@ cleanup() {
 trap 'cleanup; exit 130' INT
 trap 'cleanup; exit 143' TERM
 
-./run.sh & wait $!
+./bin/runsvc.sh & wait $!
